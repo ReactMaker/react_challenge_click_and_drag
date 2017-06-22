@@ -3,9 +3,47 @@ import React, { Component } from 'react';
 import './Home.less';
 
 export default class Home extends Component {
+
+  state = {
+    isDown: false,
+  }
+
+  scrollLeft = 0;
+  clientX = 0;
+
+  mouseDown = (e) => {
+    const ele = e.currentTarget;
+    const scrollLeft = ele.scrollLeft;
+    ele.addEventListener('mousemove', this.mouseMove);
+    this.clientX = e.clientX;
+    this.scrollLeft = scrollLeft;
+    this.setState({
+      isDown: true,
+    });
+  }
+
+  mouseUp = (e) => {
+    const ele = e.currentTarget;
+    ele.removeEventListener('mousemove', this.mouseMove);
+    this.setState({
+      isDown: false
+    });
+  }
+
+  mouseMove = (e) => {
+    const ele = e.currentTarget;
+    const newClientX = e.clientX;
+    const dist = -(newClientX - this.clientX);
+    const newScrollLeft = this.scrollLeft + dist;
+    ele.scrollLeft = newScrollLeft;
+    this.scrollLeft = newScrollLeft;
+    this.clientX = newClientX;
+  }
+
   render() {
+    const { isDown } = this.state;
     return (
-      <div id="pageHome">
+      <div id="pageHome" className={`${isDown ? 'active' : ''}`} onMouseDown={this.mouseDown} onMouseUp={this.mouseUp} >
         <div className="item item1">01</div>
         <div className="item item2">02</div>
         <div className="item item3">03</div>

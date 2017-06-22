@@ -36,6 +36,12 @@ body {
     background: rgba(255, 255, 255, 0.1);
     font-size: 0;
     perspective: 500px;
+    &.active {
+        background: rgba(255, 255, 255, 0.3);
+        cursor: grabbing;
+        cursor: -webkit-grabbing;
+        transform: scale(1);
+    }
     .item {
         width: 200px;
         height: ~'calc(100% - 40px)';
