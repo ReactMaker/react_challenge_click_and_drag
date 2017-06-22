@@ -1,6 +1,10 @@
-# Simple React Start Kit 2017
+# Click and Drag
 
-這個環境包可以讓你快速體驗 ReactJS 開發環境的便利，我們並沒有在裏面放入太多套件(例如 redux, karma)，希望可以讓你用最簡單的環境開始學習 React
+ReactJs 搭配 javascript 滑鼠事件監控，製作出可以在桌面瀏覽器拖移的效果，按住滑鼠左鍵往左右拖移，頁面就會跟著滾動。
+
+![Imgur](http://i.imgur.com/IcWO0fK.gif)
+
+## [DEMO](https://reactmaker.github.io/react_challenge_click_and_drag/#/)
 
 ## 特色
 
@@ -19,8 +23,8 @@
 先確定好安裝了 node 4.5 以上的版本，接著就可以輸入以下指令
 
 ```bash
-$ git clone https://github.com/ReactMaker/simple_react_start_kit_2017
-$ cd simple_react_start_kit_2017
+$ git clone https://github.com/ReactMaker/react_challenge_click_and_drag
+$ cd react_challenge_click_and_drag
 $ npm install                   # Install project dependencies
 $ npm start                     # Compile and launch
 ```
